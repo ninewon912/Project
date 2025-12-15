@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>권나눔 개인 홈페이지</title>
+
+<style>
+/*  기본 설정  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.7;
+  color: #333;
+}
+
+h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  color:#355E3B;
+}
+
+section {
+  padding: 90px 10%;
+}
+
+/* 상단 네비게이션 바 */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #355E3B;
+
+  z-index: 1000;
+}
+
+nav {
+  color: #fffDD0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  color: #fffDD0;     
+  text-decoration: none; 
+}
+
+nav ul a:hover {
+  color:#d0e0af;
+}
+
+/* Home */
+#home {
+  height: 100vh;
+  background-image: url("image/BG.png"); 
+  background-size: contain;   
+  background-color: black;    
+  color:#fffDD0;
+  display: flex;
+  align-items: center;
+}
+
+.home-content {
+  max-width: 600px;
+}
+
+.home-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.home-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  background: #355E3B;
+  color: #fffDD0;
+  border-radius: 30px;
+  font-size: 15px;
+  text-decoration: none; 
+}
+
+/* Section Title */
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+}
+
+/* about */
+#about {
+    background: #d0e0af;
+}
+
+/* motivation */
+#motivation {
+    background: #fffDD0;
+}
+
+/* skill */
+#skill {
+  background: #d0e0af;
+}
+.skills-list {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+.skill-box {
+    background:#fcfae7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-box:hover {
+    transform: scale(1.06);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+/* Project */
+#project {
+  background: #fffDD0;
+}
+
+.project-box {
+    background:#d0e0af;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Hobby */
+#hobby{
+  background-color: #d0e0af;
+}
+
+.hobby-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.hobby-box {
+    font-family: 'Times New Roman', Times, serif;
+    width: 250px;
+    background:#fcfae7;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hobby-box:hover {
+    transform: scale(1.07);
+    box-shadow: 0 5px 14px rgba(0,0,0,0.18);
+}
+
+.hobby-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Contact */
+#contact{
+  background:#fffDD0;
+}
+.contact-box {
+  font-family: 'Noto Sans KR', sans-serif;
+  max-width: 700px;
+  background: #d0e0af;
+  margin: 50px auto;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  border-top: 5px solid #355E3B;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: 'Noto Sans KR', sans-serif;
+  padding: 14px;
+  border: 1.5px solid #fcfae7;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #fcfae7;
+}
+
+.contact-form textarea {
+  font-family: 'Noto Sans KR', sans-serif;
+  height: 130px;
+  resize: none;
+  background-color: #fcfae7;
+}
+
+.contact-form button {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #355E3B;
+  color: #fcfae7;
+  border: none;
+  padding: 14px;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.contact-form button:hover {
+  transform: scale(1.10);
+}
+
+</style>
+</head>
+<body>
+
+<!-- 0. 상단 네비게이션 바 -->
+<header>
+  <nav>
+    <div class="logo">Kwon Nanum</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#motivation">Motivation</a></li>
+      <li><a href="#skill">Skill</a></li>
+      <li><a href="#project">Project</a></li>
+      <li><a href="#hobby">Hobby</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- 1. Home -->
+<section id="home">
+  <div class="home-content">
+    <h1>안녕하세요,<br>권나눔입니다</h1>
+    <p>동의대학교 소프트웨어융합대학 1학년<br>게임공학과 진학을 목표로 공부하고 있습니다.</p>
+    <a href="#about" class="btn">더 알아보기</a>
+  </div>
+</section>
+
+<!-- 2. About -->
+<section id="about">
+  <div class="about">
+    <div class="section-title"><h2>About Me</h2></div>
+    저는 게임공학과를 지망하고 있는 소프트웨어융합대학 1학년 권나눔입니다.
+  </div>
+</section>
+
+<!-- 3. Motivation-->
+<section id="motivation">
+  <div class="section-title"><h2>Motivation</h2></div>
+    평소에 게임을 좋아하던 저는 2024년 고등학교 3학년 재학 중, 
+    부산교육청의 '다(多)고른 캠퍼스' 프로그램으로 동의대학교 
+    게임공학과 서진석 교수님의 Unity 강의를 듣게 되었습니다.
+    게임을 개발하며 재미를 느꼈고, 자연스럽게 게임공학과 진학을 결심하게 되었습니다.
+</section>
+
+<!-- 4. Skill -->
+<section id="skill" class="section">
+    <div class="section-title"><h2>Skill</h2></div>
+    <div class="skills-list">
+        <div class="skill-box">C</div>
+        <div class="skill-box">Unity</div>
+        <div class="skill-box">Blender</div>
+        <div class="skill-box">Adobe Photoshop</div>
+        <div class="skill-box">Adobe Illustrator</div>
+        <div class="skill-box">Adobe Premiere Pro</div>
+    </div>
+</section>
+
+<!-- 5. 프로젝트 -->
+<section id="project" class="section">
+    <div class="section-title"><h2>Project</h2></div>
+
+    <div class="project-box">
+        <h3>포켓몬스터 리디자인 프로젝트</h3>
+        <p>2025년 2학기 게임스토리텔링 강의에서 진행한 ‘게임 스토리 리디자인’ 팀 프로젝트입니다.<br>
+        저는 PPT 제작과 아이디어 구성을 담당했으며, 팀원분들의 동의를 받아 프로젝트 내용을 공유합니다.</p>
+        <br>
+        <img src="image/PDF1.png" alt="프로젝트" style="width:100%; border-radius:0px;">
+        <a href="pdf.html" 
+        style=
+        "display:block;
+        width:200px;
+        margin:20px auto 0 auto;
+        padding:12px 20px;
+        background:#355E3B;
+        color:#fffDD0;
+        border-radius:8px;
+        text-decoration:none;
+        text-align:center;">
+        프로젝트 보기
+        </a>
+    </div>
+</section>
+
+<!-- 6. Hobby -->
+<section id="hobby" class="section">
+    <div class="section-title"><h2>Hobby</h2></div>
+    <div class="hobby-images">
+        <div class="hobby-box">
+            <img src="image/Game.jpg" alt="게임 사진">
+            <p>Game</p>
+        </div>
+
+        <div class="hobby-box">
+            <img src="image/Bass.jpg" alt="베이스 사진">
+            <p>Bass</p>
+        </div>
+
+        <div class="hobby-box">
+        <img src="image/Pr.jpg" alt="영상편집 사진">
+        <p>Video Editing</p>
+        </div>
+    </div>
+</section>
+
+<!-- 7.contact -->
+<section id="contact">
+  <div class="contact-box">
+    <h2>Contact</h2>
+    <p>kjc024421@gmail.com</p> <br>
+    <form class="contact-form">
+      <input type="text" placeholder="이름" required>
+      <input type="email" placeholder="이메일" required>
+      <input type="text" placeholder="제목" required>
+      <textarea placeholder="메시지를 입력하세요" required></textarea>
+      <button type="submit">제출하기</button>
+    </form>
+  </div>
+</section>
+
+</body>
+</html>
